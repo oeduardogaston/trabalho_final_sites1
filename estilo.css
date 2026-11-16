@@ -1,0 +1,254 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #111116;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.cabecalho {
+    text-align: center;
+    padding: 55px 20px;
+    background-color: #1c1c24;
+    border-bottom: 2px solid #a52a36;
+}
+.cabecalho h1 {
+    font-size: 48px;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+}
+.cabecalho p {
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: #c5a46d;
+}
+.generos {
+    text-align: center;
+    padding: 80px 30px;
+}
+.generos h2 {
+    font-size: 25px;
+    letter-spacing: 3px;
+    margin-bottom: 45px;
+}
+.container-generos {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+.card-genero {
+    width: 280px;
+    height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: white;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    background-color: #33333d;
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card-genero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.15)
+    );
+}
+
+.card-genero h3 {
+    position: relative;
+    z-index: 1;
+    font-size: 27px;
+    letter-spacing: 3px;
+}
+.acao {
+    background-image: url("imagens/acao.jpg");
+}
+
+.drama {
+    background-image: url("imagens/drama.jpg");
+}
+
+.terror {
+    background-image: url("imagens/terror.jpg");
+}
+.card-genero:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(165, 42, 54, 0.4);
+}
+
+@media (max-width: 700px) {
+
+    .cabecalho h1 {
+        font-size: 32px;
+    }
+
+    .container-generos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-genero {
+        width: 90%;
+        max-width: 350px;
+        height: 300px;
+    }
+
+}
+.topo-genero {
+    background-color: #1c1c24;
+    text-align: center;
+    padding: 45px 20px;
+    border-bottom: 2px solid #a52a36;
+}
+.topo-genero h1 {
+    font-size: 36px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+.topo-genero p {
+    color: #d0d0d0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+.voltar {
+    display: inline-block;
+    margin-top: 22px;
+    color: #c5a46d;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.voltar:hover {
+    color: white;
+}
+
+.conteudo-filmes {
+    padding: 55px 6%;
+}
+
+.conteudo-filmes h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    font-size: 24px;
+}
+.lista-filmes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+.filme-card {
+    background-color: #1c1c24;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #33333d;
+    transition: transform 0.3s;
+}
+.filme-card:hover {
+    transform: translateY(-7px);
+}
+.filme-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+.filme-card h3 {
+    color: #bdc023;
+    font-size: 20px;
+    padding: 18px 15px 10px;
+}
+.filme-card p {
+    color: #d0d0d0;
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 0 15px 22px;
+}
+.rodape {
+    background-color: #1c1c24;
+    border-top: 2px solid #a52a36;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.rodape h3 {
+    color: #c5a46d;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.rodape p {
+    color: #c0c0c0;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.contato {
+    margin-top: 20px;
+}
+
+.direitos {
+    border-top: 1px solid #393943;
+    padding-top: 18px;
+    margin-top: 25px !important;
+}
+
+/* RESPONSIVIDADE */
+
+/* TABLETS */
+
+@media (max-width: 1000px) {
+
+    .lista-filmes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+
+    .topo-genero h1 {
+        font-size: 26px;
+    }
+
+    .topo-genero p {
+        font-size: 15px;
+    }
+
+    .conteudo-filmes {
+        padding: 35px 20px;
+    }
+
+    .lista-filmes {
+        grid-template-columns: 1fr;
+    }
+
+    .filme-card img {
+        height: auto;
+        max-height: 420px;
+        object-fit: contain;
+        background-color: #111116;
+    }
+
+}
